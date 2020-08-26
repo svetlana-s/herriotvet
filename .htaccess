@@ -1,0 +1,12 @@
+# Enable runtime rewriting engin
+RewriteEngine On
+
+# RewriteCond - defines a rule condition
+# REQUEST_FILENAME - the full local filesystem path to the file or script matching the request
+# !-f - not a file
+# !-d - not a directory
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redirect processing of all pages to index.php
+RewriteRule .* index.php [L]
